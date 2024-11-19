@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "vite",
     "format": "prettier --write .",
-    "build": "vite build"
+    "build": "vite build",
+    "test": "vitest"
   },
   "author": "Michael Joseph Canino",
   "license": "ISC",
@@ -20,7 +21,8 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "globals": "^15.12.0",
     "prettier": "^3.3.3",
-    "vite": "^5.4.11"
+    "vite": "^5.4.11",
+    "vitest": "^2.1.5"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.60.5",

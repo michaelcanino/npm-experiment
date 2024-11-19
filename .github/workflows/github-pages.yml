@@ -37,6 +37,10 @@ jobs:
       - name: List npm scripts (debug step)
         run: npm run
 
+      # Add this
+      - name: Run tests
+        run: npm run test
+
       - name: Build
         run: npm run build
 
