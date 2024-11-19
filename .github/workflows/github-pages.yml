@@ -1,11 +1,8 @@
-# Deploying static content to GitHub Pages
-# See https://github.com/actions/starter-workflows/blob/main/pages/static.yml
 name: Deploy build
 
 on:
   push:
     branches: master
-  # Enable manual deploys from the Actions tab
   workflow_dispatch:
 
 permissions:
@@ -34,8 +31,11 @@ jobs:
           node-version: 20
           cache: "npm"
 
-      - name: Install deps
+      - name: Install dependencies
         run: npm ci
+
+      - name: List npm scripts (debug step)
+        run: npm run
 
       - name: Build
         run: npm run build
@@ -46,7 +46,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload dist folder only
           path: "./dist"
 
       - name: Deploy to GitHub Pages
